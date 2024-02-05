@@ -21,6 +21,7 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:sonarjs/recommended',
 		'plugin:security/recommended',
+		'plugin:storybook/recommended',
 	],
 	env: {
 		browser: true,
