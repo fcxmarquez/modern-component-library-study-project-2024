@@ -1,0 +1,16 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Tokens */
+  --color-primary: #9879e9;
+  --color-secondary: #eb2d52;
+  --box-shadow-sm: 0px 4px 5px rgba(0, 0, 0, 0.07);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
