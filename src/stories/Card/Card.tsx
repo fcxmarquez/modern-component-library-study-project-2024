@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { options } from '@/stories/constants';
-import './Card.css';
+import styles from './Card.module.css';
 import classNames from 'classnames';
 
 export type CardProps = {
@@ -20,15 +20,14 @@ export const Card: FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={classNames('card', {
-        [`color-${color}`]: color,
-        [`size-${size}`]: size,
-        'is-clickable': isClickable,
-        'is-draggable': isDraggable,
+      className={classNames(styles.card, {
+        [styles[`color-${color}`]]: color,
+        [styles[`size-${size}`]]: size,
+        [styles['is-clickable']]: isClickable,
+        [styles['is-draggable']]: isDraggable,
       })}
     >
-      {' '}
-      {children}{' '}
+      {children}
     </div>
   );
 };
