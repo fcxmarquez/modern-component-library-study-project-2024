@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { options } from '@/stories/constants';
 import styles from './Card.module.css';
-import classNames from 'classnames';
+import { getClasses } from '@/helpers/styles';
 
 export type CardProps = {
   color?: (typeof options.colors)[number];
@@ -18,13 +18,17 @@ export const Card: FC<CardProps> = ({
   isClickable,
   isDraggable,
 }) => {
+  const getFirstFunction = getClasses(styles);
+  const getStyles = getFirstFunction({
+    color,
+    size,
+  });
+
   return (
     <div
-      className={classNames(styles.card, {
-        [styles[`color-${color}`]]: color,
-        [styles[`size-${size}`]]: size,
-        [styles['is-clickable']]: isClickable,
-        [styles['is-draggable']]: isDraggable,
+      className={getStyles('card', ['color', 'size'], {
+        'is-clickable': isClickable,
+        'is-draggable': isDraggable,
       })}
     >
       {children}
