@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { options } from '@/stories/constants';
 import styles from './Card.module.css';
-import { getClasses } from '@/helpers/styles';
+import { withStyles } from '@/hoc/withStyles';
 
 export type CardProps = {
   color?: (typeof options.colors)[number];
@@ -9,21 +9,16 @@ export type CardProps = {
   children: React.ReactNode;
   isClickable?: boolean;
   isDraggable?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getStyles: (...props: any[]) => string;
 };
 
-export const Card: FC<CardProps> = ({
+const Card: FC<CardProps> = ({
+  getStyles,
   children,
-  color = 'primary',
-  size = 'md',
   isClickable,
   isDraggable,
 }) => {
-  const getFirstFunction = getClasses(styles);
-  const getStyles = getFirstFunction({
-    color,
-    size,
-  });
-
   return (
     <div
       className={getStyles('card', ['color', 'size'], {
@@ -35,3 +30,5 @@ export const Card: FC<CardProps> = ({
     </div>
   );
 };
+
+export default withStyles(styles)(Card);

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Card } from '@/stories/Card/Card';
+import Card from '@/stories/Card/Card';
 import { options } from '../constants';
 
 const meta: Meta<typeof Card> = {
