@@ -13,7 +13,7 @@ export type CardProps = {
   getStyles: (...props: any[]) => string;
 };
 
-const Card: FC<CardProps> = ({
+export const Card: FC<CardProps> = ({
   getStyles,
   children,
   isClickable,
@@ -29,6 +29,11 @@ const Card: FC<CardProps> = ({
       {children}
     </div>
   );
+};
+
+Card.defaultProps = {
+  color: 'primary',
+  size: 'md',
 };
 
 export default withStyles(styles)(Card);
