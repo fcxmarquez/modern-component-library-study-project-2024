@@ -8,7 +8,6 @@ const getModulesClasses = (cssModule: CSSModuleClasses, classKey: string) => {
   return (cssModule && cssModule[classKey]) || classKey;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getObjectClasses = (cssModule: CSSModuleClasses, object: any) => {
   return Object.keys(object).reduce((classes, classKey) => {
     const className = cssModule[classKey];

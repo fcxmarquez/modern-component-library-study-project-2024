@@ -10,6 +10,11 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    project: [
+      './tsconfig.json',
+      './tsconfig.node.json',
+      './tsconfig.eslint.json',
+    ],
   },
   plugins: ['@typescript-eslint'],
   extends: [
@@ -32,7 +37,7 @@ module.exports = {
     es6: true,
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 2,
+    '@typescript-eslint/no-explicit-any': 1,
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
       1,
@@ -73,4 +78,17 @@ module.exports = {
       version: 'detect',
     },
   },
+  overrides: [
+    {
+      files: [
+        '**/*.ts',
+        '**/*.tsx',
+        '**/*.js',
+        '**/*.jsx',
+        '**/*.cjs',
+        '**/*.mjs',
+      ],
+      excludedFiles: ['node_modules/**'],
+    },
+  ],
 };

@@ -1,19 +1,18 @@
 import 'minireset.css';
 import type { Preview } from '@storybook/react';
 import '@/styles/global.css';
-import { CSSProperties } from 'react';
 import React from 'react';
 
-const styles: CSSProperties = {
+const getStyles = ({ __sb }: any) => ({
   display: 'flex',
-  flexDirection: 'column',
-  maxHeight: 'auto',
-  justifyContent: 'flex-start',
-  alignContent: 'flex-start',
-  flexWrap: 'wrap',
-  height: '100%',
-  gap: '10px 30px',
-};
+  flexDirection: __sb?.flexDirection || 'column',
+  maxHeight: __sb?.maxHeight || 'auto',
+  justifyContent: __sb?.justifyContent || 'flex-start',
+  alignContent: __sb?.alignContent || 'flex-start',
+  flexWrap: __sb?.flexWrap || 'wrap',
+  height: __sb?.height || '100%',
+  gap: __sb?.gap || '10px 30px',
+});
 
 const preview: Preview = {
   parameters: {
@@ -27,8 +26,8 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story: React.FC) => (
-      <div style={styles}>
+    (Story: React.FC, { parameters }) => (
+      <div style={getStyles(parameters)}>
         <Story />
       </div>
     ),
