@@ -1,10 +1,9 @@
 import { getClasses } from '@/helpers/styles';
-import { CardProps } from '@/stories/Card/Card';
 
 export const withStyles =
   (styles: CSSModuleClasses) =>
-  (WrappedComponent: React.ComponentType<CardProps>) => {
-    const WithStylesComponent = (props: React.PropsWithChildren<CardProps>) => {
+  (WrappedComponent: React.ComponentType<any>) => {
+    const WithStylesComponent = (props: React.PropsWithChildren<any>) => {
       const allProps = { ...WrappedComponent.defaultProps, ...props };
 
       return (

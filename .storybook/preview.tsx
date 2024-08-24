@@ -9,6 +9,7 @@ const getStyles = ({ __sb }: any) => ({
   maxHeight: __sb?.maxHeight || 'auto',
   justifyContent: __sb?.justifyContent || 'flex-start',
   alignContent: __sb?.alignContent || 'flex-start',
+  alignItems: __sb?.alignItems || 'flex-start',
   flexWrap: __sb?.flexWrap || 'wrap',
   height: __sb?.height || '100%',
   gap: __sb?.gap || '10px 30px',

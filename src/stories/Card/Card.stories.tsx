@@ -27,7 +27,9 @@ const meta: Meta<typeof Card> = {
 export default meta;
 type Story = StoryObj<typeof Card>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: Template,
+};
 
 export const Clickable: Story = {
   render: Template,
